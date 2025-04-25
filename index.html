@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi página web con Catálogo</title>
+    <style>
+      body {
+        background-color: #f0f8ff;
+        font-family: Arial, sans-serif;
+        color: #333;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        color: #2e8b57;
+        margin-top: 20px;
+      }
+
+      p {
+        color: #555;
+      }
+
+      a {
+        color: #1e90ff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .search-bar {
+        margin: 20px auto;
+        padding: 10px;
+        font-size: 1em;
+        width: 50%;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        display: block;
+      }
+
+      .catalogo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 20px;
+        padding: 0 10px;
+      }
+
+      .producto {
+        border: 1px solid #ddd;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .producto:hover {
+        transform: scale(1.05);
+      }
+
+      .producto img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .producto h2 {
+        color: #2e8b57;
+        font-size: 1.5em;
+      }
+
+      .producto p {
+        color: #555;
+      }
+
+      .producto .precio {
+        font-size: 1.2em;
+        color: #ff6347;
+        margin-top: 10px;
+      }
+
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.6);
+      }
+
+      .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        width: 60%;
+        border-radius: 8px;
+        text-align: left;
+        position: relative;
+      }
+
+      .close {
+        position: absolute;
+        top: 10px; right: 15px;
+        font-size: 25px;
+        cursor: pointer;
+        color: #888;
+      }
+
+      .close:hover {
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>¡Mercado Libre, Ya llegué!</h1>
+    <p>Aquí mandamos a la verga a Pardo.</p>
+
+    <img src="Imagenes/ML2.png" alt="Logo Meli">
+
+    <input type="text" id="searchInput" class="search-bar" placeholder="Buscar productos..." onkeyup="filterProducts()">
+
+    <h1>Catálogo de Productos</h1>
+
+    <div class="catalogo">
+      <div class="producto" data-name="producto 1" onclick="mostrarDetalles('Producto 1', 'Descripción completa del producto 1 con más detalles, características y beneficios.', 'producto1.jpg', '$19.99')">
+        <img src="producto1.jpg" alt="Producto 1">
+        <h2>Producto 1</h2>
+        <p class="precio">$19.99</p>
+      </div>
+
+      <div class="producto" data-name="producto 2" onclick="mostrarDetalles('Producto 2', 'Descripción más completa del producto 2. Ideal para todas las ocasiones.', 'producto2.jpg', '$29.99')">
+        <img src="producto2.jpg" alt="Producto 2">
+        <h2>Producto 2</h2>
+        <p class="precio">$29.99</p>
+      </div>
+
+      <div class="producto" data-name="producto 3" onclick="mostrarDetalles('Producto 3', 'Detalles extendidos del producto 3. Hecho con materiales de calidad.', 'producto3.jpg', '$39.99')">
+        <img src="producto3.jpg" alt="Producto 3">
+        <h2>Producto 3</h2>
+        <p class="precio">$39.99</p>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <h2 id="modalTitulo"></h2>
+        <img id="modalImagen" src="" alt="" style="width:100%; border-radius:8px;">
+        <p id="modalDescripcion" style="margin-top:15px;"></p>
+        <p id="modalPrecio" style="font-weight:bold; color:#ff6347;"></p>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      function mostrarDetalles(nombre, descripcion, imagen, precio) {
+        document.getElementById('modalTitulo').textContent = nombre;
+        document.getElementById('modalDescripcion').textContent = descripcion;
+        document.getElementById('modalImagen').src = imagen;
+        document.getElementById('modalPrecio').textContent = precio;
+        document.getElementById('modal').style.display = 'block';
+      }
+
+      function cerrarModal() {
+        document.getElementById('modal').style.display = 'none';
+      }
+
+      window.onclick = function(event) {
+        if (event.target == document.getElementById('modal')) {
+          cerrarModal();
+        }
+      }
+
+      function filterProducts() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+        const productos = document.querySelectorAll('.producto');
+
+        productos.forEach(function(producto) {
+          const productName = producto.getAttribute('data-name').toLowerCase();
+          if (productName.includes(searchInput)) {
+            producto.style.display = '';
+          } else {
+            producto.style.display = 'none';
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
+
