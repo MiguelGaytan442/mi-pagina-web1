@@ -24,72 +24,21 @@
       font-family: 'Montserrat', serif;
     }
 
-    .organigrama {
-  padding: 40px 0;
+    img {
+        max-width: 100%;
+        height: auto;
+      }
+
+    figure {
   text-align: center;
+  margin: 20px auto;
 }
 
-.organigrama ul {
-  padding-top: 20px;
-  position: relative;
-  display: table;
-  margin: 0 auto;
+figcaption {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
 }
-
-.organigrama ul ul {
-  padding-top: 20px;
-}
-
-.organigrama li {
-  display: table-cell;
-  vertical-align: top;
-  position: relative;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.organigrama li::before, .organigrama li::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  border-top: 2px solid #000;
-  width: 50%;
-  height: 20px;
-}
-
-.organigrama li::before {
-  left: 0;
-  border-right: 2px solid #000;
-}
-
-.organigrama li::after {
-  right: 0;
-  border-left: 2px solid #000;
-}
-
-.organigrama li:only-child::before,
-.organigrama li:only-child::after {
-  display: none;
-}
-
-.organigrama li:only-child {
-  padding-top: 0;
-}
-
-.organigrama li:first-child::before,
-.organigrama li:last-child::after {
-  border: none;
-}
-
-.nodo {
-  display: inline-block;
-  border: 2px solid #000;
-  padding: 10px 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
 
     a {
       color: #1e90ff;
@@ -113,6 +62,8 @@
       margin: 10px;
     }
 
+    
+
   </style>
 </head>
 <body>
@@ -120,7 +71,7 @@
   <nav>
     <ul>
       <li><a href="index.html">Página Principal</a></li>
-      
+
     </ul>
   </nav>
   
@@ -128,33 +79,11 @@
   <h1>Bienvenido, este es el equipo de Control Tower</h1>
   <p>En esta página podemos mostrar nuevos productos o contenido.</p>
 
-  <div class="organigrama">
-    <ul>
-      <li>
-        <div class="nodo">Supervisor</div>
-        <ul>
-          <li>
-        <ul>        
-            <div class="nodo">TL</div>
-            <ul>
-              <li><div class="nodo">Operador</div></li>
-              <li><div class="nodo">Operador</div></li>
-            </ul>
-          </li>
-          <li>
-            <div class="nodo">TL</div>
-            <ul>
-              <li><div class="nodo">Operador</div></li>
-              <li><div class="nodo">Operador</div></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+  <figure>
+    <img src="Imagenes/ML2.png" alt="Logo Meli">
+    <figcaption>Logo de Mercado Libre</figcaption>
+  </figure>
   
-
-
   <div class="catalogo">
     <div class="producto">
       <img src="imagenes/nuevo_producto.jpg" alt="Nuevo Producto">
