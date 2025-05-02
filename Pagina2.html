@@ -24,6 +24,73 @@
       font-family: 'Montserrat', serif;
     }
 
+    .organigrama {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.organigrama ul {
+  padding-top: 20px;
+  position: relative;
+  display: table;
+  margin: 0 auto;
+}
+
+.organigrama ul ul {
+  padding-top: 20px;
+}
+
+.organigrama li {
+  display: table-cell;
+  vertical-align: top;
+  position: relative;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.organigrama li::before, .organigrama li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  border-top: 2px solid #000;
+  width: 50%;
+  height: 20px;
+}
+
+.organigrama li::before {
+  left: 0;
+  border-right: 2px solid #000;
+}
+
+.organigrama li::after {
+  right: 0;
+  border-left: 2px solid #000;
+}
+
+.organigrama li:only-child::before,
+.organigrama li:only-child::after {
+  display: none;
+}
+
+.organigrama li:only-child {
+  padding-top: 0;
+}
+
+.organigrama li:first-child::before,
+.organigrama li:last-child::after {
+  border: none;
+}
+
+.nodo {
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+
     a {
       color: #1e90ff;
       text-decoration: none;
@@ -61,6 +128,32 @@
 
   <h1>Bienvenido, este es el equipo de Control Tower</h1>
   <p>En esta página podemos mostrar nuevos productos o contenido.</p>
+
+  <div class="organigrama">
+    <ul>
+      <li>
+        <div class="nodo">Gerente General</div>
+        <ul>
+          <li>
+            <div class="nodo">Líder de Operaciones</div>
+            <ul>
+              <li><div class="nodo">Coordinador A</div></li>
+              <li><div class="nodo">Coordinador B</div></li>
+            </ul>
+          </li>
+          <li>
+            <div class="nodo">Líder de Tecnología</div>
+            <ul>
+              <li><div class="nodo">Desarrollador</div></li>
+              <li><div class="nodo">Soporte Técnico</div></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
+
 
   <div class="catalogo">
     <div class="producto">
