@@ -79,6 +79,18 @@
       display: inline;
       margin: 10px;
     }
+
+    @media (max-width: 992px) {
+  .catalogo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .catalogo {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 <body>
