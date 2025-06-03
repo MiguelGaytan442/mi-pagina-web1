@@ -198,6 +198,8 @@ a.equipo-boton:hover {
         <img src="imagenes/SOTO2.png" alt="MONITOR CONTROL TOWER RECEIVING CENTER MX">
         <h2>MONITOR CONTROL TOWER RECEIVING CENTER MX</h2>
         <p class="Jose Angel Soto">Jose Angel Soto</p>
+        <div id="totalReacciones" style="margin: 20px 0; font-size: 1.3em;">
+  <strong>Reacciones totales:</strong> 👍 0 ❤️ 0 😂 0 😮 0 😢 0 😡 0
                 <div class="reacciones" data-id="producto1">
   <span onclick="setReaction(this)">👍</span>
   <span onclick="setReaction(this)">❤️</span>
@@ -299,27 +301,31 @@ a.equipo-boton:hover {
     </div>
 
     <!-- Scripts -->
-    <script>
-  function mostrarDetalles(nombre, descripcion, imagenUrl, owner, enlace) {
+   <script>
+  // Mostrar detalles en el modal
+  function mostrarDetalles(nombre, descripcion, imagen, precio, enlace) {
     document.getElementById('modalTitulo').textContent = nombre;
     document.getElementById('modalDescripcion').textContent = descripcion;
-    document.getElementById('modalImagen').src = imagenUrl;
-    document.getElementById('modalPrecio').textContent = owner;
+    document.getElementById('modalImagen').src = imagen;
+    document.getElementById('modalPrecio').textContent = precio;
     document.getElementById('modalEnlace').href = enlace;
 
     document.getElementById('modal').style.display = 'block';
   }
 
+  // Cerrar modal
   function cerrarModal() {
     document.getElementById('modal').style.display = 'none';
   }
 
+  // Cerrar modal si se da click fuera del contenido
   window.onclick = function(event) {
     if (event.target == document.getElementById('modal')) {
       cerrarModal();
     }
   }
 
+  // Filtrar productos según búsqueda
   function filterProducts() {
     const searchInput = document.getElementById('searchInput').value.toLowerCase();
     const productos = document.querySelectorAll('.producto');
@@ -334,20 +340,54 @@ a.equipo-boton:hover {
     });
   }
 
+  // Actualizar conteo total de reacciones y mostrarlo
+  function actualizarConteoTotal() {
+    const contenedores = document.querySelectorAll('.reacciones');
+    const conteo = {
+      '👍': 0,
+      '❤️': 0,
+      '😂': 0,
+      '😮': 0,
+      '😢': 0,
+      '😡': 0
+    };
+
+    contenedores.forEach(container => {
+      const id = container.getAttribute('data-id');
+      const reaction = localStorage.getItem(`reaction-${id}`);
+      if (reaction && conteo.hasOwnProperty(reaction)) {
+        conteo[reaction]++;
+      }
+    });
+
+    // Construir texto para mostrar
+    const texto = `👍 ${conteo['👍']} ❤️ ${conteo['❤️']} 😂 ${conteo['😂']} 😮 ${conteo['😮']} 😢 ${conteo['😢']} 😡 ${conteo['😡']}`;
+
+    document.getElementById('totalReacciones').innerHTML = `<strong>Reacciones totales:</strong> ${texto}`;
+  }
+
+  // Manejar reacciones (emoji)
   function setReaction(element) {
     const container = element.parentElement;
     const id = container.getAttribute('data-id');
     const reaction = element.textContent;
 
+    // Guardar en localStorage la reacción seleccionada para ese producto
     localStorage.setItem(`reaction-${id}`, reaction);
 
+    // Quitar selección previa
     container.querySelectorAll('span').forEach(span => {
       span.classList.remove('selected');
     });
 
+    // Agregar clase selected al emoji clickeado
     element.classList.add('selected');
+
+    // Actualizar conteo total tras elegir reacción
+    actualizarConteoTotal();
   }
 
+  // Cargar reacciones guardadas de localStorage al cargar la página
   function loadReactions() {
     const contenedores = document.querySelectorAll('.reacciones');
 
@@ -363,8 +403,12 @@ a.equipo-boton:hover {
         });
       }
     });
+
+    // Actualizar conteo total al cargar
+    actualizarConteoTotal();
   }
 
+  // Ejecutar carga de reacciones cuando la página cargue
   window.onload = function () {
     loadReactions();
   };
