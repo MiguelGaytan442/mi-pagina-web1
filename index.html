@@ -350,14 +350,36 @@ function reactuar(boton, tipo) {
   const producto = boton.closest('.producto').getAttribute('data-name');
   const key = `reaccion_${producto}_${tipo}`;
 
-  let valor = parseInt(localStorage.getItem(key) || 0);
+  // Obtener el valor actual de localStorage
+  let valor = parseInt(localStorage.getItem(key)) || 0;
   valor += 1;
+
+  // Guardar el nuevo valor
   localStorage.setItem(key, valor);
 
+  // Actualizar el contador visual
   const contador = boton.querySelector('.count');
   contador.textContent = valor;
 
       }
+
+      window.onload = function() {
+  const productos = document.querySelectorAll('.producto');
+
+  productos.forEach(producto => {
+    const productoName = producto.getAttribute('data-name');
+    const botones = producto.querySelectorAll('.reacciones button');
+
+    botones.forEach(boton => {
+      const tipo = boton.textContent.trim().split(' ')[0]; // emoji
+      const key = `reaccion_${productoName}_${tipo}`;
+
+      const valor = parseInt(localStorage.getItem(key)) || 0;
+      const contador = boton.querySelector('.count');
+      contador.textContent = valor;
+    });
+  });
+};
     </script>
   </body>
 </html>
