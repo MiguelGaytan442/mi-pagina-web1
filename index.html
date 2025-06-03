@@ -172,15 +172,6 @@ a.equipo-boton:hover {
   gap: 4px;
 }
 
-.reacciones button:hover {
-  transform: scale(1.2);
-}
-
-.reacciones .count {
-  font-size: 14px;
-  font-weight: bold;
-  color: #555;
-}
 
     </style>
   </head>
@@ -204,13 +195,6 @@ a.equipo-boton:hover {
         <img src="imagenes/SOTO2.png" alt="MONITOR CONTROL TOWER RECEIVING CENTER MX">
         <h2>MONITOR CONTROL TOWER RECEIVING CENTER MX</h2>
         <p class="Jose Angel Soto">Jose Angel Soto</p>
-        <div class="reacciones">
-  <button onclick="reactuar(this, 'like')">👍 <span class="count">0</span></button>
-  <button onclick="reactuar(this, 'love')">❤️ <span class="count">0</span></button>
-  <button onclick="reactuar(this, 'funny')">😂 <span class="count">0</span></button>
-  <button onclick="reactuar(this, 'wow')">😮 <span class="count">0</span></button>
-  <button onclick="reactuar(this, 'sad')">😢 <span class="count">0</span></button>
-  <button onclick="reactuar(this, 'angry')">😡 <span class="count">0</span></button>
 </div>
 
       </div>
@@ -346,40 +330,7 @@ a.equipo-boton:hover {
         });
         }
 
-function reactuar(boton, tipo) {
-  const producto = boton.closest('.producto').getAttribute('data-name');
-  const key = `reaccion_${producto}_${tipo}`;
 
-  // Obtener el valor actual de localStorage
-  let valor = parseInt(localStorage.getItem(key)) || 0;
-  valor += 1;
-
-  // Guardar el nuevo valor
-  localStorage.setItem(key, valor);
-
-  // Actualizar el contador visual
-  const contador = boton.querySelector('.count');
-  contador.textContent = valor;
-
-      }
-
-      window.onload = function() {
-  const productos = document.querySelectorAll('.producto');
-
-  productos.forEach(producto => {
-    const productoName = producto.getAttribute('data-name');
-    const botones = producto.querySelectorAll('.reacciones button');
-
-    botones.forEach(boton => {
-      const tipo = boton.textContent.trim().split(' ')[0]; // emoji
-      const key = `reaccion_${productoName}_${tipo}`;
-
-      const valor = parseInt(localStorage.getItem(key)) || 0;
-      const contador = boton.querySelector('.count');
-      contador.textContent = valor;
-    });
-  });
-};
     </script>
   </body>
 </html>
