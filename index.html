@@ -153,6 +153,29 @@ a.equipo-boton:hover {
       .close:hover {
         color: #000;
       }
+      .reacciones {
+  margin-top: 10px;
+  font-size: 1.5em;
+}
+
+.reacciones span {
+  cursor: pointer;
+  margin: 0 5px;
+  opacity: 0.5;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.reacciones span:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.reacciones span.selected {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+
     </style>
   </head>
   <body>  
@@ -175,6 +198,14 @@ a.equipo-boton:hover {
         <img src="imagenes/SOTO2.png" alt="MONITOR CONTROL TOWER RECEIVING CENTER MX">
         <h2>MONITOR CONTROL TOWER RECEIVING CENTER MX</h2>
         <p class="Jose Angel Soto">Jose Angel Soto</p>
+                <div class="reacciones" data-id="producto1">
+  <span onclick="setReaction(this)">👍</span>
+  <span onclick="setReaction(this)">❤️</span>
+  <span onclick="setReaction(this)">😂</span>
+  <span onclick="setReaction(this)">😮</span>
+  <span onclick="setReaction(this)">😢</span>
+  <span onclick="setReaction(this)">😡</span>
+</div>
       </div>
 
       <div class="producto" data-name="PANEL | MXRC03" onclick="mostrarDetalles('PANEL | MXRC03', 'Dashboard donde podemos ver procesamientos como TB y NTB, tiempos no disponibles, tiempos no sitémicos, ociosidades y afectaciones como reaperturas', 'Miguel Alexis Gaytan', ' ', 'https://lookerstudio.google.com/u/0/reporting/6ffd07c9-b80a-4738-b62a-5e1cc719ff88/page/0Qu5E?pli=1' )">
@@ -302,6 +333,57 @@ a.equipo-boton:hover {
             producto.style.display = 'none';
           }
         });
+
+        function filterProducts() {
+  const searchInput = document.getElementById('searchInput').value.toLowerCase();
+  const productos = document.querySelectorAll('.producto');
+
+  productos.forEach(function(producto) {
+    const productName = producto.getAttribute('data-name').toLowerCase();
+    if (productName.includes(searchInput)) {
+      producto.style.display = '';
+    } else {
+      producto.style.display = 'none';
+    }
+  });
+}
+
+// ✅ FUERA de filterProducts
+function setReaction(element) {
+  const container = element.parentElement;
+  const id = container.getAttribute('data-id');
+  const reaction = element.textContent;
+
+  localStorage.setItem(`reaction-${id}`, reaction);
+
+  container.querySelectorAll('span').forEach(span => {
+    span.classList.remove('selected');
+  });
+
+  element.classList.add('selected');
+}
+
+function loadReactions() {
+  const contenedores = document.querySelectorAll('.reacciones');
+
+  contenedores.forEach(container => {
+    const id = container.getAttribute('data-id');
+    const saved = localStorage.getItem(`reaction-${id}`);
+
+    if (saved) {
+      container.querySelectorAll('span').forEach(span => {
+        if (span.textContent === saved) {
+          span.classList.add('selected');
+        }
+      });
+    }
+  });
+}
+
+window.onload = function () {
+  loadReactions();
+};
+
       }
     </script>
   </body>
