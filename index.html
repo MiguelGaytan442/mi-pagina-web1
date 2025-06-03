@@ -347,10 +347,15 @@ a.equipo-boton:hover {
         }
 
 function reactuar(boton, tipo) {
-  const contador = boton.querySelector('.count');
-  let valor = parseInt(contador.textContent);
-  contador.textContent = valor + 1;
+  const producto = boton.closest('.producto').getAttribute('data-name');
+  const key = `reaccion_${producto}_${tipo}`;
 
+  let valor = parseInt(localStorage.getItem(key) || 0);
+  valor += 1;
+  localStorage.setItem(key, valor);
+
+  const contador = boton.querySelector('.count');
+  contador.textContent = valor;
 
       }
     </script>
