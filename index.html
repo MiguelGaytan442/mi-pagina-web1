@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Control Tower Website</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control  Tower Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
       body {
         background-color: #fffea2;
@@ -19,41 +16,44 @@
       }
 
       a.equipo-boton {
-        display: inline-block;
-        background-color: #ff6347; /* Color de fondo */
-        color: white; /* Color del texto */
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 10px;
-      }
+     display: inline-block;
+    background-color: #ff6347; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
 
-      a.equipo-boton:hover {
-        background-color: #e5533c; /* Color al pasar el mouse */
-      }
+a.equipo-boton:hover {
+  background-color: #e5533c; /* Color al pasar el mouse */
+}
+
 
       h1 {
         color: #010101;
         margin-top: 20px;
         margin-bottom: 0.5px;
         font-size: 48px; /* Tamaño de letra */
-        font-family: "Montserrat", serif; /* Tipo de letra */
+        font-family: 'Montserrat', serif; /* Tipo de letra */
       }
       h3 {
         color: #010101;
         margin-top: 20px;
         font-size: 24px; /* Tamaño de letra */
-        font-family: "Montserrat", serif; /* Tipo de letra */
+        font-family: 'Montserrat', serif; /* Tipo de letra */
       }
 
       p {
         color: #555;
-        font-family: "Montserrat", cursive;
+        font-family: 'Montserrat', cursive;
+
       }
 
       b {
         color: #555;
+
       }
 
       a {
@@ -127,11 +127,9 @@
         display: none;
         position: fixed;
         z-index: 10;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.6);
       }
 
       .modal-content {
@@ -146,8 +144,7 @@
 
       .close {
         position: absolute;
-        top: 10px;
-        right: 15px;
+        top: 10px; right: 15px;
         font-size: 25px;
         cursor: pointer;
         color: #888;
@@ -157,257 +154,263 @@
         color: #000;
       }
       .reacciones {
-        margin-top: 10px;
-        font-size: 1.5em;
-      }
+  margin-top: 10px;
+  font-size: 1.5em;
+}
 
-      .reacciones span {
-        cursor: pointer;
-        margin: 0 5px;
-        opacity: 0.5;
-        transition: transform 0.2s, opacity 0.2s;
-        user-select: none;
-      }
+.reacciones span {
+  cursor: pointer;
+  margin: 0 5px;
+  opacity: 0.5;
+  transition: transform 0.2s, opacity 0.2s;
+}
 
-      .reacciones span:hover {
-        transform: scale(1.2);
-        opacity: 1;
-      }
+.reacciones span:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
 
-      .reacciones span.selected {
-        opacity: 1;
-        transform: scale(1.3);
-      }
+.reacciones span.selected {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+
     </style>
   </head>
-  <body>
+  <body>  
     <h1>Control Tower | MXRC03</h1>
-    <p>
-      "Conectamos cada paso del proceso para que los movimientos sean fluidos,
-      eficientes y siempre a tiempo"
-    </p>
+    <p>"Conectamos cada paso del proceso para que los movimientos sean fluidos, eficientes y siempre a tiempo"</p>
 
     <p><a href="pagina2.html" class="equipo-boton">Conoce al equipo</a></p>
 
-    <img src="Imagenes/ML2.png" alt="Logo Meli" />
+    <img src="Imagenes/ML2.png" alt="Logo Meli">
 
-    <input
-      type="text"
-      id="searchInput"
-      class="search-bar"
-      placeholder="Buscar herramienta..."
-      onkeyup="filterProducts()"
-    />
+    <input type="text" id="searchInput" class="search-bar" placeholder="Buscar herramienta..." onkeyup="filterProducts()">
 
     <h3>Menú de Dashboard</h3>
-    <p>
-      A continuación mostramos los dashboards y archivos en donde los owners son
-      parte del equipo de torre de control.
+    <p>A continuación mostramos los dashboards y archivos en donde los owners son parte del equipo de torre de control. 
     </p>
 
     <div class="catalogo">
-      <div
-        class="producto"
-        data-name="MONITOR CONTROL TOWER RECEIVING CENTER MX"
-        onclick="mostrarDetalles('MONITOR CONTROL TOWER RECEIVING CENTER MX', 'Dashboard que muestra el panorama operacional de Inbound, producción, outbound y tranferencias multiwarehouse a nivel Mercado Libre México', 'imagenes/SOTO2.png', 'Jose Angel Soto', 'joseangel.sotofuentes@mercadolibre.com.mx', 'https://lookerstudio.google.com/u/0/reporting/3dcd1a0e-4dab-435f-a063-474acc3f4829/page/p_y5o887xlld?pli=1')"
-      >
-        <img src="imagenes/SOTO2.png" alt="MONITOR CONTROL TOWER RECEIVING CENTER MX" />
+
+      <div class="producto" data-name="MONITOR CONTROL TOWER RECEIVING CENTER MX" onclick="mostrarDetalles('MONITOR CONTROL TOWER RECEIVING CENTER MX', 'Dashboard que muestra el panorama operacional de Inbound, producción, outbound y tranferencias multiwarehouse a nivel Mercado Libre México', 'Jose Angel Soto', 'joseangel.sotofuentes@mercadolibre.com.mx', 'https://lookerstudio.google.com/u/0/reporting/3dcd1a0e-4dab-435f-a063-474acc3f4829/page/p_y5o887xlld?pli=1' )">
+        <img src="imagenes/SOTO2.png" alt="MONITOR CONTROL TOWER RECEIVING CENTER MX">
         <h2>MONITOR CONTROL TOWER RECEIVING CENTER MX</h2>
         <p class="Jose Angel Soto">Jose Angel Soto</p>
-
-        <div
-          class="reacciones"
-          data-id="producto1"
-          onclick="event.stopPropagation()"
-          title="Reacciona"
-        >
-          <span onclick="setReaction(this)">👍</span>
-          <span onclick="setReaction(this)">❤️</span>
-          <span onclick="setReaction(this)">😂</span>
-          <span onclick="setReaction(this)">😮</span>
-          <span onclick="setReaction(this)">😢</span>
-          <span onclick="setReaction(this)">😡</span>
-        </div>
+                <div class="reacciones" data-id="producto1">
+  <span onclick="setReaction(this)">👍</span>
+  <span onclick="setReaction(this)">❤️</span>
+  <span onclick="setReaction(this)">😂</span>
+  <span onclick="setReaction(this)">😮</span>
+  <span onclick="setReaction(this)">😢</span>
+  <span onclick="setReaction(this)">😡</span>
+</div>
       </div>
 
-      <div
-        class="producto"
-        data-name="PANEL | MXRC03"
-        onclick="mostrarDetalles('PANEL | MXRC03', 'Dashboard donde podemos ver procesamientos como TB y NTB, tiempos no disponibles, tiempos no sistémicos, ociosidades y afectaciones como reaperturas', 'imagenes/PANEL.png', 'Miguel Alexis Gaytan', '', 'https://lookerstudio.google.com/u/0/reporting/6ffd07c9-b80a-4738-b62a-5e1cc719ff88/page/0Qu5E?pli=1')"
-      >
-        <img src="imagenes/PANEL.png" alt="PANEL | MXRC03" />
+      <div class="producto" data-name="PANEL | MXRC03" onclick="mostrarDetalles('PANEL | MXRC03', 'Dashboard donde podemos ver procesamientos como TB y NTB, tiempos no disponibles, tiempos no sitémicos, ociosidades y afectaciones como reaperturas', 'Miguel Alexis Gaytan', ' ', 'https://lookerstudio.google.com/u/0/reporting/6ffd07c9-b80a-4738-b62a-5e1cc719ff88/page/0Qu5E?pli=1' )">
+        <img src="imagenes/PANEL.png" alt="PANEL | MXRC03">
         <h2>PANEL | MXRC03</h2>
         <p class="Miguel Alexis Gaytan">Miguel Alexis Gaytan</p>
-
-        <div
-          class="reacciones"
-          data-id="producto2"
-          onclick="event.stopPropagation()"
-          title="Reacciona"
-        >
-          <span onclick="setReaction(this)">👍</span>
-          <span onclick="setReaction(this)">❤️</span>
-          <span onclick="setReaction(this)">😂</span>
-          <span onclick="setReaction(this)">😮</span>
-          <span onclick="setReaction(this)">😢</span>
-          <span onclick="setReaction(this)">😡</span>
-        </div>
       </div>
 
-      <!-- Agrega más productos aquí siguiendo el mismo patrón -->
-
-      <div
-        class="producto"
-        data-name="Stage Dock´s OutBound MXRC03"
-        onclick="mostrarDetalles('Stage Dock´s OutBound MXRC03', 'Visualización de Stage Out, zona de flejado y zona de armado de HU, teniendo un panorama por unidades y remitos tipificado por estadía y SLA', 'imagenes/raba1.png', 'Angel Cardenas', 'angelfernando.cardenasgarcia@mercadolibre.com.mx', 'https://lookerstudio.google.com/reporting/e9772742-a529-4acc-b5cc-5173d095658a/page/tEnnC?pli=1')"
-      >
-        <img src="imagenes/raba1.png" alt="Stage Dock´s OutBound " />
+      <div class="producto" data-name="Stage Dock´s OutBound MXRC03" onclick="mostrarDetalles('Stage Dock´s OutBound MXRC03', 'Visualización de Stage Out, zona de flejado y zona de armado de HU, teniendo un panorama por unidades y remitos tipificado por estadía y SLA', 'Angel Cardenas', 'angelfernando.cardenasgarcia@mercadolibre.com.mx ', 'https://lookerstudio.google.com/reporting/e9772742-a529-4acc-b5cc-5173d095658a/page/tEnnC?pli=1' )">
+        <img src="imagenes/raba1.png" alt="Stage Dock´s OutBound ">
         <h2>Stage Dock´s OutBound </h2>
         <p class="Angel Cardenas">Angel Cardenas</p>
-        <div
-          class="reacciones"
-          data-id="producto3"
-          onclick="event.stopPropagation()"
-          title="Reacciona"
-        >
-          <span onclick="setReaction(this)">👍</span>
-          <span onclick="setReaction(this)">❤️</span>
-          <span onclick="setReaction(this)">😂</span>
-          <span onclick="setReaction(this)">😮</span>
-          <span onclick="setReaction(this)">😢</span>
-          <span onclick="setReaction(this)">😡</span>
-        </div>
+      </div>
+
+      <div class="producto" data-name="PALLETS | MXRC03" onclick="mostrarDetalles('PALLETS | MXRC03', 'Archivo de Google Sheets vinculado con una consulta Query el cual nos ayudará a visualizar los PL y las PS´s que tenemos pendientes en WT y Stage pendientes', 'Alberto Garcia', 'josealberto.garciacabrera@mercadolibre.com.mx ', 'https://docs.google.com/spreadsheets/d/1Gt_r8OIh7FpYagIwOe2J7hQ7IN1pMpgqlZCBtydY-NI/edit?pli=1&gid=2026010562#gid=2026010562' )">
+        <img src="imagenes/beto.png" alt="PALLETS | MXRC03">
+        <h2>PALLETS | MXRC03</h2>
+        <p class="Alberto Garcia">Alberto Garcia</p>
+      </div>
+
+      <div class="producto" data-name="IS´S en Backlog MXRC03" onclick="mostrarDetalles('IS´S en Backlog MXRC03', 'Archivo de Google Sheets en el que hacemos el análisis de todas las IS´s que se encuentran en status de retrasadas y en backlog', 'Diego Gamboa', 'juan.gamboa@mercadolibre.com.mx ', 'https://docs.google.com/spreadsheets/d/1uFakwvg6BgVd-YEv2O76wyrsrWMGbeN2bu61mZ3LQKE/edit?gid=2079038819#gid=2079038819' )">
+        <img src="imagenes/gamboa.png" alt="IS´S en Backlog MXRC03">
+        <h2>IS´S en Backlog MXRC03</h2>
+        <p class="Diego Gamboa">Diego Gamboa</p>
+      </div>
+
+      <div class="producto" data-name="TOTEFULLNESS MXRC" onclick="mostrarDetalles('TOTEFULLNESS MXRC', 'Dashboard que nos permite visualizar el detalle del KPI de totefullnes, tanto de Non totable como Totable, así como la volumetría de los SKU´s transferidos', 'Jose Angel Soto', 'joseangel.sotofuentes@mercadolibre.com.mx', 'https://lookerstudio.google.com/reporting/a4b730b8-862a-4a15-a730-ab502cc83936/page/fN7UE?pli=1' )">
+        <img src="imagenes/SOTO1.png" alt="TOTEFULLNESS MXRC">
+        <h2>TOTEFULLNESS MXRC</h2>
+        <p class="Jose Angel Soto">Jose Angel Soto</p>
+      </div>
+
+  
+      <div class="producto" data-name="SOLICITUD DE REAPERTURAS Y DESVINCULACIÓN" onclick="mostrarDetalles('SOLICITUD DE REAPERTURAS', 'Este enlace nos lleva a la carpeta donde podemos encontrar los Google Sheets en los que podemos hacer nuestras solicitudes de reapertura y desvinculación ', 'Erick Pardo', 'erickfelipe.pardomontiel@mercadolibre.com.mx', 'https://drive.google.com/drive/folders/1r06OyOmosRlUDtQvrvjt8HP3rVbDm0bb' )">
+        <img src="imagenes/PARDO.png" alt="SOLICITUD DE REAPERTURAS Y DESVINCULACIÓN">
+        <h2>SOLICITUD DE REAPERTURAS Y DESVINCULACIÓN</h2>
+        <p class="Ercik Pardo">Erick Pardo</p>
+      </div>
+
+      <div class="producto" data-name="TRAZABILIDAD DE MU´s MXRC03" onclick="mostrarDetalles('TRAZABILIDAD DE MU´s MXRC03', 'Un dashboard que nos muestra los MU´s pendientes por cubing y pick to movable', 'Angel Cardenas', 'angelfernando.cardenasgarcia@mercadolibre.com.mx', 'https://lookerstudio.google.com/reporting/251fa302-a6b4-4db6-b685-5cc3e93fa87b/page/tEnnC' )">
+        <img src="imagenes/raba2.png" alt="TRAZABILIDAD DE MU´s MXRC03">
+        <h2>TRAZABILIDAD DE MU´s MXRC03</h2>
+        <p class="Angel Cardenas">Angel Cardenas</p>
+      </div>
+
+      <div class="producto" data-name="LIBERACIÓN DE UBICACIONES TRANSITORIAS" onclick="mostrarDetalles('LIBERACIÓN DE UBICACIONES TRANSITORIAS', 'Un dashboard que nos muestra los MU´s pendientes por cubing y pick to movable', 'Loan Reynoso', 'angelfernando.cardenasgarcia@mercadolibre.com.mx', 'https://lookerstudio.google.com/reporting/18992c40-d111-42e4-bbd0-6a4d042595f0/page/jT5IF' )">
+        <img src="imagenes/loan.png" alt="LIBERACIÓN DE UBICACIONES TRANSITORIAS">
+        <h2>LIBERACIÓN DE UBICACIONES TRANSITORIAS</h2>
+        <p class="Loan Reynoso">Loan Reynoso</p>
       </div>
     </div>
+    <ul>
+    </ul>
+  
 
-    <h3>Reacciones totales</h3>
-    <p id="totalReacciones" style="font-size: 1.3em;">
-      <strong>Reacciones totales:</strong> 👍 0 ❤️ 0 😂 0 😮 0 😢 0 😡 0
-    </p>
+    <h3>Archivos internos</h3>
+    <p>Estos son los archivos que ocupamos internamente para análisis y resguardos.</p>
+
+    <div class="catalogo">
+
+    <div class="producto" data-name="SEGUIMIENTO TORRE DE CONTROL RC03" onclick="mostrarDetalles('SEGUIMIENTO TORRE DE CONTROL RC03', 'File que nos permite registrar todo el producto que llega al área así como los tickets que sube el equipo para la liberación de los bugs sistémicos que impactan al SLA', 'Luis Quiroz', 'luis.quiroz@mercadolibre.com.mx', 'https://docs.google.com/spreadsheets/d/1uFakwvg6BgVd-YEv2O76wyrsrWMGbeN2bu61mZ3LQKE/edit?gid=2079038819#gid=2079038819' )">
+      <img src="imagenes/quiroz.png" alt="SEGUIMIENTO TORRE DE CONTROL RC03">
+      <h2>SEGUIMIENTO TORRE DE CONTROL RC03</h2>
+      <p class="Luis Quiroz">Luis Quiroz</p>
+    </div>
+    
+    <div class="producto" data-name="Liberación de ubicaciones transitorias MXRC03" onclick="mostrarDetalles('Liberación de ubicaciones transitorias MXRC03', 'En este file sumamos los MU´s declarados como perdidos para su proceso de lost o IMA en 0 dependiendo el caso', 'ICQA', 'ICQA', 'https://docs.google.com/spreadsheets/d/1IcjthJhapzd2pfjvJfR65FYyJSyRC6kNVscMzqhjAoE/edit?gid=222119582#gid=222119582' )">
+      <img src="imagenes/liberación.png" alt="Liberación de ubicaciones transitorias MXRC03">
+      <h2>Liberación de ubicaciones transitorias MXRC03</h2>
+      <p class="ICQA">ICQA</p>
+    </div>
+
+    <div class="producto" data-name="[CX] INVENTARIO | MLM" onclick="mostrarDetalles('CX INVENTARIO | MLM', 'Archivo que nos permita el seguimiento de los casos CX', 'CX', 'CX', 'https://docs.google.com/spreadsheets/d/16R88OWPXGeD_LNvG3Df7Tp9t0qKJPtmrgs0Ew-1mlok/edit?gid=1142790794#gid=1142790794' )">
+      <img src="imagenes/cx.png" alt="[CX] INVENTARIO | MLM">
+      <h2>[CX] INVENTARIO | MLM</h2>
+      <p class="CX">CX</p>
+    </div>
+
+    <p><a href="pagina2.html" class="equipo-boton">Conoce al equipo</a></p>
 
     <!-- Modal -->
     <div id="modal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="cerrarModal()">&times;</span>
         <h2 id="modalTitulo"></h2>
-        <img
-          id="modalImagen"
-          src=""
-          alt=""
-          style="width: 100%; border-radius: 8px"
-        />
-        <p id="modalDescripcion" style="margin-top: 15px"></p>
-        <p id="modalPrecio" style="font-weight: bold; color: #ff6347"></p>
-        <a
-          id="modalEnlace"
-          href="#"
-          target="_blank"
-          style="
-            display: inline-block;
-            margin-top: 15px;
-            background: #1e90ff;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-          "
-          >Ir al sitio</a
-        >
+        <img id="modalImagen" src="" alt="" style="width:100%; border-radius:8px;">
+        <p id="modalDescripcion" style="margin-top:15px;"></p>
+        <p id="modalPrecio" style="font-weight:bold; color:#ff6347;"></p>
+        <a id="modalEnlace" href="#" target="_blank" style="display:inline-block; margin-top:15px; background:#1e90ff; color:#fff; padding:10px 20px; border-radius:5px; text-decoration:none;">Ir al sitio</a>        
       </div>
     </div>
 
-    <script>
-      // Mostrar detalles en el modal
-      function mostrarDetalles(nombre, descripcion, imagen, owner, correo, enlace) {
-        document.getElementById("modalTitulo").textContent = nombre;
-        document.getElementById("modalDescripcion").textContent = descripcion;
-        document.getElementById("modalImagen").src = imagen;
-        document.getElementById("modalPrecio").textContent =
-          owner + (correo ? " (" + correo + ")" : "");
-        document.getElementById("modalEnlace").href = enlace;
+    <!-- Scripts -->
+   <script>
+  // Mostrar detalles en el modal
+  function mostrarDetalles(nombre, descripcion, imagen, precio, enlace) {
+    document.getElementById('modalTitulo').textContent = nombre;
+    document.getElementById('modalDescripcion').textContent = descripcion;
+    document.getElementById('modalImagen').src = imagen;
+    document.getElementById('modalPrecio').textContent = precio;
+    document.getElementById('modalEnlace').href = enlace;
 
-        document.getElementById("modal").style.display = "block";
+    document.getElementById('modal').style.display = 'block';
+  }
+
+  // Cerrar modal
+  function cerrarModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+
+  // Cerrar modal si se da click fuera del contenido
+  window.onclick = function(event) {
+    if (event.target == document.getElementById('modal')) {
+      cerrarModal();
+    }
+  }
+
+  // Filtrar productos según búsqueda
+  function filterProducts() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const productos = document.querySelectorAll('.producto');
+
+    productos.forEach(function(producto) {
+      const productName = producto.getAttribute('data-name').toLowerCase();
+      if (productName.includes(searchInput)) {
+        producto.style.display = '';
+      } else {
+        producto.style.display = 'none';
       }
+    });
+  }
 
-      // Cerrar modal
-      function cerrarModal() {
-        document.getElementById("modal").style.display = "none";
+  // Actualizar conteo total de reacciones y mostrarlo
+  function actualizarConteoTotal() {
+    const contenedores = document.querySelectorAll('.reacciones');
+    const conteo = {
+      '👍': 0,
+      '❤️': 0,
+      '😂': 0,
+      '😮': 0,
+      '😢': 0,
+      '😡': 0
+    };
+
+    contenedores.forEach(container => {
+      const id = container.getAttribute('data-id');
+      const reaction = localStorage.getItem(reaction-${id});
+      if (reaction && conteo.hasOwnProperty(reaction)) {
+        conteo[reaction]++;
       }
+    });
 
-      // Cerrar modal si se da click fuera del contenido
-      window.onclick = function (event) {
-        if (event.target == document.getElementById("modal")) {
-          cerrarModal();
-        }
-      };
+    // Construir texto para mostrar
+    const texto = 👍 ${conteo['👍']} ❤️ ${conteo['❤️']} 😂 ${conteo['😂']} 😮 ${conteo['😮']} 😢 ${conteo['😢']} 😡 ${conteo['😡']};
 
-      // Filtrar productos por búsqueda
-      function filterProducts() {
-        const input = document.getElementById("searchInput").value.toUpperCase();
-        const productos = document.querySelectorAll(".producto");
+    document.getElementById('totalReacciones').innerHTML = <strong>Reacciones totales:</strong> ${texto};
+  }
 
-        productos.forEach((producto) => {
-          const nombre = producto.getAttribute("data-name").toUpperCase();
-          if (nombre.indexOf(input) > -1) {
-            producto.style.display = "";
-          } else {
-            producto.style.display = "none";
+  // Manejar reacciones (emoji)
+  function setReaction(element) {
+    const container = element.parentElement;
+    const id = container.getAttribute('data-id');
+    const reaction = element.textContent;
+
+    // Guardar en localStorage la reacción seleccionada para ese producto
+    localStorage.setItem(reaction-${id}, reaction);
+
+    // Quitar selección previa
+    container.querySelectorAll('span').forEach(span => {
+      span.classList.remove('selected');
+    });
+
+    // Agregar clase selected al emoji clickeado
+    element.classList.add('selected');
+
+    // Actualizar conteo total tras elegir reacción
+    actualizarConteoTotal();
+  }
+
+  // Cargar reacciones guardadas de localStorage al cargar la página
+  function loadReactions() {
+    const contenedores = document.querySelectorAll('.reacciones');
+
+    contenedores.forEach(container => {
+      const id = container.getAttribute('data-id');
+      const saved = localStorage.getItem(reaction-${id});
+
+      if (saved) {
+        container.querySelectorAll('span').forEach(span => {
+          if (span.textContent === saved) {
+            span.classList.add('selected');
           }
         });
       }
+    });
 
-      // Reacciones
-      function actualizarConteoTotal() {
-        const contenedores = document.querySelectorAll(".reacciones");
-        const conteo = { "👍": 0, "❤️": 0, "😂": 0, "😮": 0, "😢": 0, "😡": 0 };
+    // Actualizar conteo total al cargar
+    actualizarConteoTotal();
+  }
 
-        contenedores.forEach((container) => {
-          const id = container.getAttribute("data-id");
-          const reaction = localStorage.getItem(`reaction-${id}`);
-          if (reaction && conteo.hasOwnProperty(reaction)) {
-            conteo[reaction]++;
-          }
-        });
+  // Ejecutar carga de reacciones cuando la página cargue
+  window.onload = function () {
+    loadReactions();
+  };
+</script>
 
-        const texto = `👍 ${conteo["👍"]} ❤️ ${conteo["❤️"]} 😂 ${conteo["😂"]} 😮 ${conteo["😮"]} 😢 ${conteo["😢"]} 😡 ${conteo["😡"]}`;
-        document.getElementById("totalReacciones").innerHTML = `<strong>Reacciones totales:</strong> ${texto}`;
-      }
-
-      function setReaction(element) {
-        const container = element.parentElement;
-        const id = container.getAttribute("data-id");
-        const reaction = element.textContent;
-
-        localStorage.setItem(`reaction-${id}`, reaction);
-
-        container.querySelectorAll("span").forEach((span) =>
-          span.classList.remove("selected")
-        );
-        element.classList.add("selected");
-
-        actualizarConteoTotal();
-      }
-
-      function loadReactions() {
-        const contenedores = document.querySelectorAll(".reacciones");
-
-        contenedores.forEach((container) => {
-          const id = container.getAttribute("data-id");
-          const saved = localStorage.getItem(`reaction-${id}`);
-
-          if (saved) {
-            container.querySelectorAll("span").forEach((span) => {
-              if (span.textContent === saved) {
-                span.classList.add("selected");
-              }
-            });
-          }
-        });
-
-        actualizarConteoTotal();
-      }
-
-      window.onload = loadReactions;
-    </script>
   </body>
 </html>
